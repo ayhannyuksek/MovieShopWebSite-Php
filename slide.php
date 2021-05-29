@@ -14,7 +14,7 @@
                   <img class="card-img-top" src="./img/Başlıksız-2.jpg" alt="Card image cap">
                   <h4 class="card-title d-flex justify-content-center">The Shawsank Redemption</h4>
                   <h5 class="text-success d-flex justify-content-center">90 ₺</h5>
-                  <a  class="add-cart btn btn-dark mt-3 d-flex justify-content-center" ><span><ion-icon size="large" name="cart-outline"></ion-icon></span></a>
+                  <a  class="add-cart btn btn-dark mt-3 d-flex justify-content-center " ><span><ion-icon size="large" name="cart-outline"></ion-icon></span></a>
                   </div>
               </div>
               

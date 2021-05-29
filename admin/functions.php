@@ -1,5 +1,6 @@
 <?php
 
+
 function pr($arr){
     echo "<pre>";
     print_r($arr);
@@ -21,7 +22,6 @@ function get_safe_value($con,$str){
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
-
 
 
 ?>
