@@ -1,0 +1,232 @@
+
+
+.band1{
+    height: 10px;
+    width: 384px;
+    background-color: #30323D;
+}
+.band2{
+    height: 10px;
+    width: 384px;
+    background-color:  #30323D;
+}
+.band3{
+    height: 10px;
+    width: 384px;
+    background-color:  #30323D;
+}
+.band4{
+    height: 10px;
+    width: 384px;
+    background-color:  #30323D;
+}
+.band5{
+    height: 10px;
+    width: 384px;
+    background-color:#30323D ;
+}
+
+.nav-head {
+    height: 300px;
+    background-image: url(./img/navbarbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+nav .container-md{
+    background: rgba(255, 255, 255, 0.747);
+    border-radius: 5px;
+}
+nav div button .sepet{
+    text-decoration: none;
+}
+.navbar-expand-lg{
+    background: #21897E;
+}
+
+nav div ul li  .nav-link {
+    color: white  !important;
+
+}
+nav div ul li .custom-btn:hover{
+    background-color: #30323D;
+}
+nav div ul li .custom-btn{
+    margin-right: 20px;
+    
+}
+
+nav div ul li div button {
+    color: white  !important;
+}
+
+nav div ul li div .dropdown-menu{
+    background-color: #30323D  !important;
+    width: 180px; 
+    
+}
+nav div ul li div .dropdown-menu .dropdown-item{
+    color: white;
+}
+nav div ul li div .dropdown-menu .dropdown-item:hover{
+    color: #21897E;
+}
+nav div .category-bar:hover .dropdown-menu{
+    display: block;
+}
+
+nav div form button{
+    background-color: #30323D !important;
+    color: white  !important;
+}
+nav div .dropdown button{
+    color: white  !important;
+    padding: 12.75px ;
+}
+
+nav div .dropdown .btn-info{
+    background-color: #30323D !important;
+    border:#30323D;
+    padding: 8px;
+}
+
+nav div .dropdown .btn-info:hover{
+    background-color:#21897E  !important;
+}
+nav div .dropdown .btn-info .sepet:hover{
+    color: white;
+}
+nav div form .btn:hover{
+background-color: #21897E  !important;
+}
+nav div form .btn{
+    border-radius: 100px;
+    width: 5rem;
+}
+nav div form .form-control{
+    border-radius:100px;
+    width: 30rem;
+    margin-right: 5px;
+}
+nav .navbar-brand{
+    display: none;
+}
+/*Tablet*/
+@media (max-width: 768px){
+    nav .container-md div{
+    margin: auto;
+    display: block;
+    }
+
+    nav .container-md form{
+        margin: auto;
+        display: block;
+    }
+
+    nav .container-md .dropdown{
+       margin: auto;
+        display: block;
+        margin-left: 230px;
+    }
+    
+    nav .container-md {
+        height: 200px;
+    }
+    nav .navbar-brand{
+        display: block;
+    }
+}
+/*Telefon*/
+@media (max-width: 500px){
+    nav .container-md div{
+    margin: auto;
+    display: block;
+    }
+
+    nav .container-md form{
+        margin: auto;
+        display: block;
+    }
+
+    nav .container-md .dropdown{
+       margin: auto;
+        display: block;
+       
+    }
+    
+    nav .container-md {
+        height: 200px;
+    }
+    
+    nav .container-md form input{
+        width: fit-content;
+    }
+}
+
+.card-header{
+    background-color: #21897E !important;
+}
+
+.card-header ul li .nav-link:hover{
+    background-color: #30323D;
+    border-color: #30323D;
+    color: #21897E ;
+}
+
+.card-header ul li .nav-link:focus{
+    background-color:#30323D ;
+    border-color: #30323D;
+    color: white;
+}
+.card-header ul li .nav-link{
+   margin-left: 3rem;
+   margin-right: 3rem;
+}
+
+.card-header .category-bar:hover .dropdown-menu{
+    display: block;
+}
+
+.card-header .dropdown-menu{
+    background-color: #30323D  !important;
+    width: 213px; 
+}
+.card-header .dropdown-menu .dropdown-item{
+    color: white;
+}
+.card-header .dropdown-menu .dropdown-item:hover{
+    color:  #21897E;
+}
+.card-header .nav-link {
+    font-weight: bolder  !important;
+}
+.card-header .dropdown-menu{
+    margin-left: 45px;
+}
+
+.container.home-page{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.navbar.nav-head.navbar-custom span{
+    background-color:#21897E ;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+footer{
+    background-color: #30323D !important;
+}
+footer a{
+    background-color: #30323D !important;
+    border-color: #21897E !important;
+}
+
+footer a:hover{
+    background-color: #21897E !important;
+}
+
