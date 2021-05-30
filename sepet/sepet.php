@@ -57,7 +57,7 @@ if(isset($_SESSION["shoppingCart"])){
                                     <td><img class="cart-img" src="<?php echo $product['image'];?>" /> </td>
                                     <td><?php echo $product["name"];?></td>
                                     <td>In stock</td>
-                                    <td><span><a href="#"class="btn btn-xs btn-success">+</a></span><input class="form-control" type="text" value="<?php echo $product['count'];?>" /><span><a href="#"class="minus btn btn-xs btn-danger">-</a></span></td>
+                                    <td><span><a href="cart_db.php?p=incCount&product_id=<?php echo $product["id"];?>" class="btn btn-xs btn-success">+</a></span><input class="form-control" type="text" value="<?php echo $product['count'];?>" /><span><a href="cart_db.php?p=decCount&product_id=<?php echo $product["id"];?>" class="minus btn btn-xs btn-danger">-</a></span></td>
                                     <td class="text-right"><?php echo $product["price"]*$product['count'];?> TL</td>
                                     <td class="text-right"><button product-id="<?php echo $product["id"];?>" class="btn btn-sm btn-danger removeFromCartBtn"><i class="fa fa-trash"></i> </button> </td>
                                 </tr>
@@ -109,10 +109,10 @@ if(isset($_SESSION["shoppingCart"])){
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                <button class="btn btn-lg btn-block btn-light text-uppercase">Continue Shopping</button>
+                <a href="../index.php" class="btn btn-lg btn-block btn-light text-uppercase">Continue Shopping</a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                    <a class="btn btn-lg btn-block btn-success text-uppercase">Checkout</a>
                 </div>
             </div>
         </div>

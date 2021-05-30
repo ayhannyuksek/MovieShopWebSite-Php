@@ -77,11 +77,82 @@ function removeFromCart($product_id){
     }
 
 }
+
+
+
+
+
 function incCount($product_id){
+   
+    if(isset($_SESSION["shoppingCart"])){
+     
+        $shoppingCart = $_SESSION["shoppingCart"];
+        $products= $shoppingCart["products"];
+
+        if(array_key_exists($product_id,$products)){
+            $products[$product_id]["count"]++;
+        }
+        
+        $total_price = 0.0;
+        $total_count = 0;
+    
+        foreach($products as $product){
+            $product["$total_price"] = $product["count"]*$product["price"];
+            $total_price = $total_price +  $product["$total_price"];
+    
+            $total_count += $product["count"];
+    
+        }
+    
+       
+       
+        $summary["total_price"]=$total_price;
+        $summary["total_count"]=$total_count;
+    
+        $_SESSION["shoppingCart"]["products"] = $products;
+        $_SESSION["shoppingCart"]["summary"] = $summary;
+       
+        return true;
+        
+    }
 
     
 
-}function decCount($product_id){
+}
+
+
+function decCount($product_id){
+    if(isset($_SESSION["shoppingCart"])){
+     
+        $shoppingCart = $_SESSION["shoppingCart"];
+        $products= $shoppingCart["products"];
+
+        if(array_key_exists($product_id,$products)){
+            $products[$product_id]["count"]--;
+        }
+        
+        $total_price = 0.0;
+        $total_count = 0;
+    
+        foreach($products as $product){
+            $product["$total_price"] = $product["count"]*$product["price"];
+            $total_price = $total_price +  $product["$total_price"];
+    
+            $total_count += $product["count"];
+    
+        }
+    
+       
+       
+        $summary["total_price"]=$total_price;
+        $summary["total_count"]=$total_count;
+    
+        $_SESSION["shoppingCart"]["products"] = $products;
+        $_SESSION["shoppingCart"]["summary"] = $summary;
+       
+        return true;
+        
+    }
 
 }
 
@@ -102,6 +173,27 @@ if(isset($_POST["p"])){
     }else if ($islem == "removeFromCart"){
           $id = $_POST["product_id"];  
         echo removeFromCart($id);
+    }
+}
+
+if(isset($_GET["p"])){
+
+    $islem = $_GET["p"];
+
+    if($islem=="incCount"){
+        
+        $id =$_GET["product_id"];
+
+        if(incCount($id)){
+            header("location:sepet.php");
+        }
+        
+    }else if ($islem == "decCount"){
+          $id = $_GET["product_id"];  
+        
+          if(decCount($id)){
+            header("location:sepet.php");
+        }
     }
 }
 
