@@ -1,3 +1,18 @@
+<?php
+
+include "../admin/functions.php";
+if(isset($_POST["submit"])){
+    phpAlert("Adres Kaydedildi");
+}
+if(isset($_POST["pay"])){
+    phpAlert("Ödeme Yapıldı");
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +28,8 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="SHORTCUT ICON" href="./img/turkuazAdress.png">
     <link rel="stylesheet" type="text/css" href="payment.css" />
-    <title>Document</title>
+    <link rel="SHORTCUT ICON" href="../img/turkuazAdress.png">
+	<title>Checkout</title>
 </head>
 <body>
     
@@ -21,15 +37,15 @@
         <div class="row">
             <div class="col-6 shipping-form">
                 <h3 class="text-center">Shipping Address</h3>
-                <form>
+                <form method ="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="name">Name</label>
-                        <input type="name" class="form-control" id="name">
+                        <input type="name" class="form-control" id="name" placeholder="name">
                         </div>
                         <div class="form-group col-md-6">
                         <label for="surname">Surname</label>
-                        <input type="surname" class="form-control" id="surname">
+                        <input type="surname" class="form-control" id="surname"  placeholder="surname">
                         </div>
                     </div>
                     <div class="form-group">
@@ -43,7 +59,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <input type="text" class="form-control" id="inputCity"  placeholder="city">
                         </div>
                         <div class="form-group col-md-4">
                         <label for="inputState">State</label>
@@ -58,42 +74,66 @@
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    <h2 class="text-center mt-4">Ödeme Yöntemi Seçiniz..</h2>
+                    
                 </form>
 
             </div>
             <div class="col-5 payment-form" id="myP">
                 <h3 class="text-center">Payment Method</h3>
                 
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Select Payment method</option>
+                    <label class="my-1 mr-2 " for="inlineFormCustomSelectPref">Preference</label>
+                    <select id="zoneSelect" onclick="updateChar();" class="custom-select my-1 mr-sm-2" >
+                        <option selected >Select Payment method</option>
                         <option value="0">Credit Card</option>
                         <option value="1">Havale</option>
                     </select>
-                    <div id= "credit">
-                    <form class="credit-card">
+                    <div id= "credit" style="display:none;">
+                    <form class="credit-card" method="post">
                     
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <label for="inputAddress">Kart üzerindeki isim</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="İsim Soyisim">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="İsim Soyisim" required>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Kart Numarası</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="xxxx-xxxx-xxxx-xxxx">
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="xxxx-xxxx-xxxx-xxxx" required>
                     </div>
                     <div class="row">
                     <div class="form-group col-6">
                         <label class="label" for="inputAddress2">Son Kullanma Tarihi</label>
-                        <input type="number" class="form-control  date-card " id="inputAddress2" placeholder="Ay" min="0" max="12">
-                        <input type="number" class="form-control date-card" id="inputAddress2" placeholder="Yıl" min="0" max="99"> 
+                        <input type="number" class="form-control  date-card " id="inputAddress2" placeholder="Ay" min="0" max="12" required>
+                        <input type="number" class="form-control date-card" id="inputAddress2" placeholder="Yıl" min="0" max="99" required> 
                     </div>
                     <div class="form-group col-6">
                         <label class="label" for="inputAddress2">CCV</label>
-                        <input type="text" class="form-control  ccv-card" id="inputAddress2" placeholder="***">   
+                        <input type="text" class="form-control  ccv-card" id="inputAddress2" placeholder="***" required>   
                     </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    <button type="submit" name="pay" class="btn btn-dark btn-block mt-4">Pay</button>
+               
+                </form>
+                </div>
+
+                <div id= "transfer" style="display:none;">
+                    <form class="credit-card" method="post">
+                    
+                    <div class="form-group mt-4">
+                        <label for="inputAddress">Name Surname</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="İsim Soyisim" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Account Number</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="xxxx-xxxx-xxxx-xxxx-xxxx" required>
+                    </div>
+                    <label for="inputAddress2">Bank</label>
+                    <select id="zoneSelect" class="custom-select my-1 mr-sm-2" >
+                        <option selected >Select Bank</option>
+                        <option value="0">Ziraat Bankası</option>
+                        <option value="1">İş Bankası</option>
+                        <option value="1">Garanti Bankası</option>
+                    </select>
+                    <button type="submit" name="pay" class="btn btn-dark btn-block mt-4">Pay</button>
                
                 </form>
                 </div>
@@ -101,7 +141,23 @@
         </div>
     </div>
 
+    <script>
+        function updateChar() {
 
+        var zone = document.getElementById("zoneSelect");
+        var credit = document.getElementById("credit");
+        var transfer = document.getElementById("transfer");
+
+
+        if (zone.value == "0"){
+            credit.style.display="block";
+            transfer.style.display = "none";
+        }else if(zone.value =="1"){
+            credit.style.display="none";
+            transfer.style.display = "block";
+        }
+        }
+      </script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

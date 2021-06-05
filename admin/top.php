@@ -20,7 +20,7 @@ if(isset($_SESSION["ADMIN_LOGIN"]) && $_SESSION["ADMIN_USERNAME"] != ""){
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Dashboard Page</title>
+      <title>Admin Page</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="assets/css/normalize.css">
       <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -31,6 +31,7 @@ if(isset($_SESSION["ADMIN_LOGIN"]) && $_SESSION["ADMIN_USERNAME"] != ""){
       <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
       <link rel="stylesheet" href="assets/css/style.css">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+      <link rel="SHORTCUT ICON" href="./img/turkuazAdress.png">
    </head>
    <body>
       <aside id="left-panel" class="left-panel">
@@ -55,7 +56,7 @@ if(isset($_SESSION["ADMIN_LOGIN"]) && $_SESSION["ADMIN_USERNAME"] != ""){
          <header id="header" class="header">
             <div class="top-left">
                <div class="navbar-header">
-                  <a class="navbar-brand" href="categories.php"><img src="images/logo.png" alt="Logo"></a>
+                  <a class="navbar-brand" href="categories.php"><img src="img/admin1.png" alt="Logo"></a>
                   <a class="navbar-brand hidden" href="index.html"><img src="images/logo2.png" alt="Logo"></a>
                   <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                </div>

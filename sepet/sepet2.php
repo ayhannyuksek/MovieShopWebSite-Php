@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 
 include "addCart.php";
 #var_dump($_SESSION["cart"]);
@@ -25,6 +25,8 @@ if(isset($_GET["action"])){
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="sepet.css" />
+<link rel="SHORTCUT ICON" href="../img/turkuazAdress.png">
+<title>Shopping Cart</title>
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -32,7 +34,7 @@ if(isset($_GET["action"])){
 <section class="jumbotron text-center">
     <div class="container">
         <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
-        
+        <h3>150 TL ve üzeri alışverişlerde kargo ücretsiz</h3>
      </div>
 </section>
 
@@ -86,7 +88,9 @@ if(isset($_GET["action"])){
                             <td></td>
                             <td></td>
                             <td>Shipping</td>
-                            <?php if($total >= 150){?>
+                            <?php if($total == 0){?>
+                            <td class="text-right">0.00 TL</td>
+                            <?php }elseif($total >= 150){?>
                             <td class="text-right">0.00 TL</td>
                             <?php }else{?>
                                 <td class="text-right">9.99 TL</td>
@@ -98,16 +102,14 @@ if(isset($_GET["action"])){
                             <td></td>
                             <td></td>
                             <td><strong>Total</strong></td>
-                            <?php if(empty($_SESSION["cart"])){?>
-                                <td class="text-right"><strong>0.00 TL</strong></td>
-                            <?php }else{ ?>
-
-                            <?php if($total >= 150){?>
+                            <?php if($total == 0){?>
+                                <td class="text-right"><strong><?php echo $total;?> TL</strong></td>
+                            <?php }elseif($total >= 150){?>
                                 <td class="text-right"><strong><?php echo $total;?> TL</strong></td>
                             <?php }else{?>
-                                <td class="text-right"><strong><?php echo $total + 9.99;?> TL</strong></td>
+                               <td class="text-right"><strong><?php echo $total + 9.99;?> TL</strong></td>
                             <?php } ?>
-                            <?php } ?>
+                        
                         </tr>
                     </tbody>
                 </table>
@@ -119,7 +121,7 @@ if(isset($_GET["action"])){
                     <a href="../index.php" class="btn btn-lg btn-block btn-light text-uppercase">Continue Shopping</a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <a href="payment.php" class="btn btn-lg btn-block btn-success text-uppercase">Checkout</a>
+                    <a href="payment.php" class="btn btn-lg btn-block btn-dark text-uppercase">Checkout</a>
                 </div>
             </div>
         </div>

@@ -1,16 +1,26 @@
 <?php
-error_reporting(0);
-require("admin/connection.php");
-require("admin/functions.php");
+session_start();
+$username = $_SESSION["USERNAME"];
 
-$sql = "select * from categories order by categories asc";
-$result = mysqli_query($con,$sql);
+if(isset($_POST["submit"])){
+   $user_name = $_POST["username"];
+   $email = $_POST["email"];
+   $password = $_POST["password"];
+   $sql = "select * from user_info";
+   $result = mysqli_query($con,$sql);
+while($row = mysqli_fetch_assoc($result)){
+   
+   if($username == $row["Uusername"]){
+      
+      $sql = "update user_info set Uusername='$user_name',Uemail='$email',Upassword='$password' where Uusername = '$username' ";
+      mysqli_query($con,$sql);
+   }
+}
+}
+
 
 
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -100,35 +110,51 @@ $result = mysqli_query($con,$sql);
 
 
 
-<!--Card navigation bar-->
-<div class="card-header d-flex justify-content-center">
-  <ul class="nav nav-tabs card-header-tabs">
-    <li class="nav-item">
-      <div class="category-bar dropdown">
-        <button class="btn dropdown-toggle nav-link custom-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Türüne Göre Filmler</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
- 
-        <?php
-        while($row=mysqli_fetch_assoc($result)){?>
-        
-        <a class="dropdown-item" href="index.php?id=<?=$row['id']?>"><?php echo $row["categories"]?></a>
-        <hr class="dropdown-divider">
-      
-        <?php } ?>
-
-      </div>
-    </li>
-    <li class="nav-item" >
-      <a class="nav-link active" data-toggle="tab" href="#tab1">Livadi Top List</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#tab2">Kült Filmler</a>
-    </li>
-    
-  </ul>
-</div>
 
 
 
 
-  
+<div class="content pb-0">
+            <div class="animated fadeIn">
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="card">
+                        <div class="card-header text-center"><strong>User Edit Form</div>
+                           <form method="post">
+                           <div class="card-body card-block">
+                        
+                           <div class="form-group">
+                              <label for="username" class="form-control-label">Name</label>
+                              <input type="text" name="username" placeholder="Enter username" class="form-control" required value="<?php echo $username?>">
+                           </div>
+                           <div class="form-group">
+                              <label for="email" class=" form-control-label">Email</label>
+                              <input type="text" name="email" placeholder="Enter email" class="form-control" required>
+                           </div>
+                           <div class="form-group">
+                              <label for="password" class=" form-control-label">Password</label>
+                              <input type="password" name="password" placeholder="Enter password" class="form-control" required>
+                           </div>
+                           <button id="payment-button" type="submit"  name="submit" class="btn btn-lg btn-dark btn-block">
+                              <span id="payment-button-amount">Save Changes</span>
+                           </button>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+
+
+
+
+
+
+<?php
+
+include "footer.php";
+
+?>

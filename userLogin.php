@@ -4,19 +4,21 @@ require("admin/connection.php");
 require("admin/functions.php");
 $message = "";
 if(isset($_POST["submit"])){
-	$Uemail=get_safe_value($con,$_POST["Uemail"]);
-	$Upassword=get_safe_value($con,$_POST["Upassword"]);
-	$sql = "select * from user_info where Uemail = '$Uemail' and Upassword='$Upassword'";
+	$email=get_safe_value($con,$_POST["Uemail"]);
+	$password=get_safe_value($con,$_POST["Upassword"]);
+	$sql = "select * from user_info where Uemail = '$email' and Upassword='$password'";
 	$result = mysqli_query($con,$sql);
 	$num = mysqli_num_rows($result);
     $row = mysqli_fetch_assoc($result);
-    $Uusername = $row["Uusername"];
+    
+	$Uusername = $row["Uusername"];
+	
 
 
 	if($num > 0 ){
 		$_SESSION["LOGIN"] = 'yes';
 		$_SESSION["USERNAME"] = $Uusername;
-		
+
 		header("location:index.php");
 		die();
 	}else{
@@ -33,45 +35,36 @@ if(isset($_POST["submit"])){
     <link rel="stylesheet" href="sweetalert2.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="SHORTCUT ICON" href="./img/turkuazAdress.png">
+	<title>User Login</title>
 <!------ Include the above in your HEAD tag ---------->
 
-  <div class="login-wrap">
+<div class="login-wrap">
 	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
 		<div class="login-form">
-			<div class="sign-in-htm">
-				<form method="post">
+			<h3 class="text-center mb-6 mt-0">USER LOGIN</h3>
+                <form method="post">
 				<div class="group">
-					<label for="Uusername" class="label">Email</label>
-					<input id="user" type="text" name="Uemail" class="input" placeholder="enter email" required>
+					<label for="username" class="label mt-5">Email Adress</label>
+					<input id="username" type="text" name="Uemail" class="input" data-type="text" placeholder="Enter email" required>
 				</div>
+               
 				<div class="group">
-					<label for="Upassword" class="label">Password</label>
-					<input id="pass" type="password" name="Upassword" class="input" data-type="password" placeholder="enter password" required>
+					<label for="password" class="label">Password</label>
+					<input id="password" type="password" name="Upassword" class="input" data-type="password" placeholder="Enter password"required >
 				</div>
+                
 				<div class="group">
-					<input type="submit" name="submit" class="button" value="Sign In">
+					<input type="submit" name="submit" class="btn btn-dark btn-block" value="LOGIN">
+					<a class=" btn mt-1 " href="register2.php">Don't have an account?</a>
 				</div>
-				</form>
+				<div class="hr"></div>
 				
+			</div>
+			
+			</form>
 
 				<div class="hr"></div>
 			
-			
-			
-			</div>
-			<div class="for-pwd-htm">
-				<div class="group">
-					<label for="user" class="label">Email</label>
-					<input id="user" type="text" name="email" class="input" placeholder="enter email adress">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Reset Password">
-				</div>
-				
-				<div class="hr"></div>
-			</div>
 		</div>
 	</div>
 </div>

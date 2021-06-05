@@ -39,12 +39,13 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="SHORTCUT ICON" href="./img/turkuazAdress.png">
+	<title>User Register</title>
 <!------ Include the above in your HEAD tag ---------->
 
   <div class="login-wrap">
-	<div class="login-html">
-		<div class="login-form">
-			
+	<div class="login-html ">
+		<div class="login-form mb-5 ">
+		<h3 class="text-center mb-6 m-0">USER REGISTER</h3>
                 <form method="post">
 				<div class="group">
 					<label for="username" class="label">Username</label>
@@ -60,7 +61,8 @@
 				</div>
                 
 				<div class="group">
-					<input type="submit" name="register" class="button" value="Sign Up">
+					<input type="submit" name="register" class="btn btn-dark btn-block" value="Sign Up">
+					<a class=" btn mt-1 " href="userLogin.php">Do you already have an account?</a>
 				</div>
 				<div class="hr"></div>
 			</div>
