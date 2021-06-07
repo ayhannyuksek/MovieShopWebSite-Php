@@ -68,7 +68,7 @@ $result = mysqli_query($con,$sql);
                 <?php 
                 if(isset($_SESSION["LOGIN"]) && $_SESSION["USERNAME"] != ""){
                   
-                  echo "<a class='dropdown-item' href='editProfil.php'>Edit Profil</a>";
+                  echo "<a class='dropdown-item' href='editProfil.php'>Profil Düzenle</a>";
                   echo "<a class='dropdown-item' href='userLogout.php'>Logout</a>";  
                 }else{
                   echo "<a class='dropdown-item' href='userLogin.php'>Giriş yap</a>";

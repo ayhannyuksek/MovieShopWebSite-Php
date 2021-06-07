@@ -43,7 +43,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>
@@ -69,7 +69,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>
@@ -96,7 +96,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>
@@ -122,7 +122,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>
@@ -148,7 +148,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>
@@ -174,7 +174,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>
@@ -201,7 +201,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>
@@ -227,7 +227,7 @@ require("admin/connection.php");
           <input type="hidden" name="name" value="<?php echo $row['name']?>">
           <input type="hidden" name="price" value="<?php echo $row['price']?>">
           <input type="number" name="quantity" value="1" class="form-control">
-          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Add To Cart">
+          <input type="submit" name="addToCart" class="btn btn-dark btn-block my-2" value="Sepete Ekle">
         </form>
       </div>
     </div>

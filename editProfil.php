@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "./admin/connection.php";
 $username = $_SESSION["USERNAME"];
 
 if(isset($_POST["submit"])){
@@ -78,7 +79,7 @@ while($row = mysqli_fetch_assoc($result)){
                 <?php 
                 if(isset($_SESSION["LOGIN"]) && $_SESSION["USERNAME"] != ""){
                   
-                  echo "<a class='dropdown-item' href='editProfil.php'>Edit Profil</a>";
+                  echo "<a class='dropdown-item' href='editProfil.php'>Profil Düzenle</a>";
                   echo "<a class='dropdown-item' href='userLogout.php'>Logout</a>";  
                 }else{
                   echo "<a class='dropdown-item' href='userLogin.php'>Giriş yap</a>";

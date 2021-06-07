@@ -36,40 +36,40 @@ if(isset($_POST["pay"])){
     <div class="container">
         <div class="row">
             <div class="col-6 shipping-form">
-                <h3 class="text-center">Shipping Address</h3>
+                <h3 class="text-center">Teslimat Adresi</h3>
                 <form method ="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="name">Name</label>
+                        <label for="name">İsim</label>
                         <input type="name" class="form-control" id="name" placeholder="name">
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="surname">Surname</label>
+                        <label for="surname">Soyisim</label>
                         <input type="surname" class="form-control" id="surname"  placeholder="surname">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress">Address</label>
+                        <label for="inputAddress">Adres</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Address 2</label>
+                        <label for="inputAddress2">Adres 2</label>
                         <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
+                        <label for="inputCity">Şehir</label>
                         <input type="text" class="form-control" id="inputCity"  placeholder="city">
                         </div>
                         <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
+                        <label for="inputState">İlçe</label>
                         <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
+                            <option selected>Seç...</option>
                             <option>...</option>
                         </select>
                         </div>
                         <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
+                        <label for="inputZip">Posta</label>
                         <input type="text" class="form-control" id="inputZip">
                         </div>
                     </div>
@@ -80,12 +80,12 @@ if(isset($_POST["pay"])){
 
             </div>
             <div class="col-5 payment-form" id="myP">
-                <h3 class="text-center">Payment Method</h3>
+                <h3 class="text-center"> Ödeme Yöntemi</h3>
                 
-                    <label class="my-1 mr-2 " for="inlineFormCustomSelectPref">Preference</label>
+                    <label class="my-1 mr-2 " for="inlineFormCustomSelectPref">Tercihler</label>
                     <select id="zoneSelect" onclick="updateChar();" class="custom-select my-1 mr-sm-2" >
-                        <option selected >Select Payment method</option>
-                        <option value="0">Credit Card</option>
+                        <option selected >Ödeme yöntemi belirle</option>
+                        <option value="0">Kredi Kartı</option>
                         <option value="1">Havale</option>
                     </select>
                     <div id= "credit" style="display:none;">
@@ -110,7 +110,7 @@ if(isset($_POST["pay"])){
                         <input type="text" class="form-control  ccv-card" id="inputAddress2" placeholder="***" required>   
                     </div>
                     </div>
-                    <button type="submit" name="pay" class="btn btn-dark btn-block mt-4">Pay</button>
+                    <button type="submit" name="pay" class="btn btn-dark btn-block mt-4">Öde</button>
                
                 </form>
                 </div>
@@ -119,21 +119,21 @@ if(isset($_POST["pay"])){
                     <form class="credit-card" method="post">
                     
                     <div class="form-group mt-4">
-                        <label for="inputAddress">Name Surname</label>
+                        <label for="inputAddress">İsim Soyisim</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="İsim Soyisim" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Account Number</label>
+                        <label for="inputAddress2">Hesap Numarası</label>
                         <input type="text" class="form-control" id="inputAddress2" placeholder="xxxx-xxxx-xxxx-xxxx-xxxx" required>
                     </div>
-                    <label for="inputAddress2">Bank</label>
+                    <label for="inputAddress2">Banka</label>
                     <select id="zoneSelect" class="custom-select my-1 mr-sm-2" >
-                        <option selected >Select Bank</option>
+                        <option selected >Banka Seç</option>
                         <option value="0">Ziraat Bankası</option>
                         <option value="1">İş Bankası</option>
                         <option value="1">Garanti Bankası</option>
                     </select>
-                    <button type="submit" name="pay" class="btn btn-dark btn-block mt-4">Pay</button>
+                    <button type="submit" name="pay" class="btn btn-dark btn-block mt-4">Öde</button>
                
                 </form>
                 </div>

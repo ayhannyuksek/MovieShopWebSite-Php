@@ -33,7 +33,7 @@ if(isset($_GET["action"])){
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
+        <h1 class="jumbotron-heading">Alışveriş Sepetim</h1>
         <h3>150 TL ve üzeri alışverişlerde kargo ücretsiz</h3>
      </div>
 </section>
@@ -118,10 +118,10 @@ if(isset($_GET["action"])){
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <a href="../index.php" class="btn btn-lg btn-block btn-light text-uppercase">Continue Shopping</a>
+                    <a href="../index.php" class="btn btn-lg btn-block btn-light text-uppercase">Alışverişe devam et</a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <a href="payment.php" class="btn btn-lg btn-block btn-dark text-uppercase">Checkout</a>
+                    <a href="payment.php" class="btn btn-lg btn-block btn-dark text-uppercase">Ödeme Yap</a>
                 </div>
             </div>
         </div>
